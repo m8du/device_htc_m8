@@ -41,7 +41,7 @@
 TARGET_OTA_ASSERT_DEVICE := htc_m8,htc_m8whl,htc_m8wl,m8,m8wl,m8wlv,m8vzw,m8whl,m8spr
 
 # Kernel
-TARGET_KERNEL_CONFIG := du_m8_defconfig
+TARGET_KERNEL_CONFIG := lineageos_m8_defconfig
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/m8/bluetooth
@@ -60,3 +60,18 @@ TARGET_UNIFIED_DEVICE := true
 
 # Inherit from the proprietary version
 -include vendor/htc/m8/BoardConfigVendor.mk
+
+
+
+# Blissful building options
+BLISSIFY := true
+BLISS_O3 := false
+BLISS_GRAPHITE := false
+BLISS_KRAIT := true
+BLISS_PIPE := true
+TARGET_TC_ROM := 4.9
+TARGET_TC_KERNEL := 4.9
+TARGET_GCC_VERSION_EXP := $(TARGET_TC_ROM)
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := $(TARGET_TC_KERNEL)
+#SaberMod
+-include vendor/bliss/config/sm.mk
